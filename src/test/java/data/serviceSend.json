@@ -1,0 +1,15 @@
+{
+  "vhost": "/",
+  "name": "amq.default",
+  "properties": {
+    "delivery_mode": 1,
+    "headers": {}
+  },
+  "routing_key": "testing.customer.query.is-customer-available",
+  "delivery_mode": "1",
+  "payload": '<id>',
+  "payload_encoding": "string",
+  "headers": {},
+  "props": {}
+}
+
