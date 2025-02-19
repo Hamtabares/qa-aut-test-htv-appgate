@@ -30,3 +30,8 @@ jobs:
         run: |
           chmod +x gradlew
           ./gradlew --tests runners.RunnerTestE2E
+
+      - name: Instalar Gradle Wrapper
+        run: |
+          gradle wrapper --gradle-version 7.6
+          chmod +x gradlew
