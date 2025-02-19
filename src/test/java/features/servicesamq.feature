@@ -7,7 +7,7 @@ Feature: Pruebas sobre servicios de la cola amq
     And header authorization = config.authorization
     * def id = customer
 
-
+@apiSend
   Scenario: Enviar un mensaje a la cola entrada usando la API REST de RabbitMQ
     Given url config.url
     * def body = read ('classpath:data/serviceSend.json')
@@ -16,7 +16,7 @@ Feature: Pruebas sobre servicios de la cola amq
     When method post
     Then status 200
     And match response.routed == true
-
+@apiReceived
   Scenario: Enviar un mensaje a la cola salida usando la API REST de RabbitMQ
     Given url config.url
     * def body = read ('classpath:data/serviceReceived.json')
