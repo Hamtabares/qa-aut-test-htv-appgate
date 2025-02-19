@@ -30,3 +30,24 @@ https://github.com/Hamtabares/qa-aut-test-htv-appgate/actions
 
 **PARA QUE ESTE PIPELINE SEA FUNCIONAL SE DEBE LEVENTAR EL REPOSITORIO**
 https://github.com/LuisCastillo-AG/qa-automation-test-appgate
+
+
+Hallazgos Detectados
+Consulta de información para clientes inexistentes
+
+Al realizar una consulta a los servicios para clientes que no existen, no se genera un error adecuado.
+La API responde con un código 200 OK, pero no retorna información válida.
+Ingreso de clientes inexistentes desde la cola
+
+Es posible ingresar clientes que no existen a través de la cola.
+La aplicación procesa estos clientes y asigna valores de estado, aunque no existan en PostgreSQL.
+Inconsistencia en la lectura de la respuesta desde la cola
+
+La respuesta obtenida desde la cola debería reflejar datos reales almacenados en la base de datos.
+Actualmente, la información retornada no coincide con los valores reales en PostgreSQL.
+ 
+Recomendación
+Se debe implementar una validación para:
+Asegurar que la consulta de clientes inexistentes retorne un error adecuado (por ejemplo, 404 Not Found).
+ Evitar el ingreso de clientes inexistentes en la cola.
+Validar que los datos leídos desde la cola coincidan con la base de datos.
