@@ -22,3 +22,8 @@ ejecutar la prueba de todos los escenaris
 
 el reporte queda
 qa-aut-test-htv-appgate/build/karate-reports/karate-summary.html
+
+Integración con GitHub Actions -- pipeline
+Este proyecto está configurado con GitHub Actions para ejecutar las pruebas en cada push o pull request. Puedes ver los resultados en:
+
+https://github.com/Hamtabares/qa-aut-test-htv-appgate/actions
