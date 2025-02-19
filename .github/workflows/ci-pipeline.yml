@@ -23,15 +23,21 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Configurar Gradle Cache
-        uses: gradle/gradle-build-action@v2
+      - name: Configurar caché de Gradle
+        uses: actions/cache@v3
+        with:
+          path: ~/.gradle/caches
+          key: gradle-${{ runner.os }}-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            gradle-${{ runner.os }}-
+
+      - name: Verificar Gradle Wrapper
+        run: |
+          if [ ! -f gradlew ]; then
+            echo "Gradle Wrapper no encontrado. Generando uno nuevo..."
+            gradle wrapper --gradle-version 7.6
+          fi
+          chmod +x gradlew
 
       - name: Construir y ejecutar pruebas
-        run: |
-          chmod +x gradlew
-          ./gradlew --tests runners.RunnerTestE2E
-
-      - name: Instalar Gradle Wrapper
-        run: |
-          gradle wrapper --gradle-version 7.6
-          chmod +x gradlew
+        run: ./gradlew test --tests runners.RunnerTestE2E
