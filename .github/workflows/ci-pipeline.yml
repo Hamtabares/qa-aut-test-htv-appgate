@@ -40,4 +40,4 @@ jobs:
           chmod +x gradlew
 
       - name: Construir y ejecutar pruebas
-        run: ./gradlew test --tests runners.RunnerTestE2E
+        run: ./gradlew test --tests runners.RunnerTestE2E --info
