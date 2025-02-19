@@ -27,3 +27,6 @@ Integración con GitHub Actions -- pipeline
 Este proyecto está configurado con GitHub Actions para ejecutar las pruebas en cada push o pull request. Puedes ver los resultados en:
 
 https://github.com/Hamtabares/qa-aut-test-htv-appgate/actions
+
+**PARA QUE ESTE PIPELINE SEA FUNCIONAL SE DEBE LEVENTAR EL REPOSITORIO**
+https://github.com/LuisCastillo-AG/qa-automation-test-appgate
