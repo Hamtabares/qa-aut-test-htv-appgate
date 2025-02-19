@@ -5,7 +5,7 @@
 # .gitignore created from Groovy contributors in https://github.com/apache/groovy/blob/master/.gitignore
 
 user.gradle
-.gradle/
+!gradle/wrapper/gradle-wrapper.jar
 target/
 build/
 out/
